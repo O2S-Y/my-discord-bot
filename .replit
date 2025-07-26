@@ -1,14 +1,21 @@
+run = "node index.js"
 entrypoint = "index.js"
-modules = ["nodejs-22"]
-hidden = [".config", "package-lock.json"]
-
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
+modules = ["nodejs-20"]
 
 [nix]
-channel = "stable-24_11"
+channel = "stable-22_11"
 
 [deployment]
-run = ["node", "index.js"]
-deploymentTarget = "autoscale"
-ignorePorts = false
+run = ["sh", "-c", "node index.js"]
+
+[languages]
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
