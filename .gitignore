@@ -72,13 +72,6 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
@@ -131,3 +124,6 @@ dist
 
 # Replit debugger
 .breakpoints
+
+# Do NOT ignore your local .env file! Track it if your repo is private.
+!.env
